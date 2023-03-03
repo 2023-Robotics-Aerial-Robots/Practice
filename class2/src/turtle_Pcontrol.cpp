@@ -76,6 +76,7 @@ void Positioncontrol(geometry_msgs::Point &goal, turtlesim::Pose &turtle_pose, g
 	pos_err_I.y = goal.y - turtle_pose.y;
 
 	// Find the goal_point position in Body(turtlesim) frame
+	worldtobodyQuat(pos_err_I.x, pos_err_I.y, turtle_pose.theta);
 	worldtobody2D(pos_err_I.x, pos_err_I.y, turtle_pose.theta);
 
 	// Find the error postion 
