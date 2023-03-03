@@ -5,6 +5,7 @@
 #include <turtlesim/Pose.h>
 #include <geometry_msgs/Twist.h>
 #include <geometry_msgs/Point.h>
+#include <eigen3/Eigen/Dense>
 
 // include math 
 #include <math.h>
@@ -50,10 +51,22 @@ void worldtobody2D(float &x, float &y, float theta)
 	/* --------------------
 	Finish your code here
 
-
+	
 	----------------------*/
+	std::cout << "x rot: " << x << std::endl;
 } 
 
+void worldtobodyQuat(float x, float y, float theta)
+{
+	//Eigen::Quaterniond q(w, x, y, z);
+	Eigen::Quaterniond q_normalized(q.w()/q.norm(), q.x()/q.norm(), q.y()/q.norm(), q.z()/q.norm());
+	//Eigen::Quaterniond v(w, x, y, z);
+	//Eigen::Quaterniond v_new = ?;
+	x = v_new.x();
+	y = v_new.y();
+
+	std::cout << "x quat: " << x << std::endl;
+}
 
 // P control for goal position in world frame 
 void Positioncontrol(geometry_msgs::Point &goal, turtlesim::Pose &turtle_pose, geometry_msgs::Twist &turtle_vel_msg) {
