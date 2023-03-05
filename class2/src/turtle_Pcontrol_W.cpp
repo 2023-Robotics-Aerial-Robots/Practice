@@ -58,12 +58,14 @@ void worldtobody2D(float &x, float &y, float theta)
 
 void worldtobodyQuat(float x, float y, float theta)
 {
+	/////////////// please uncomment the following code and finish it //////////////
+
 	//Eigen::Quaterniond q(w, x, y, z);
-	Eigen::Quaterniond q_normalized(q.w()/q.norm(), q.x()/q.norm(), q.y()/q.norm(), q.z()/q.norm());
+	//Eigen::Quaterniond q_normalized(q.w()/q.norm(), q.x()/q.norm(), q.y()/q.norm(), q.z()/q.norm());
 	//Eigen::Quaterniond v(w, x, y, z);
 	//Eigen::Quaterniond v_new = ?;
-	x = v_new.x();
-	y = v_new.y();
+	//x = v_new.x();
+	//y = v_new.y();
 
 	std::cout << "x quat: " << x << std::endl;
 }
