@@ -17,10 +17,10 @@ $ roslaunch practice2 turtle_single.launch
 $ rosrun practice2 turtle_Pcontrol_W
 ```
 ----
-2. 題目大致同上，不過本題的指定位置改為 body frame, 舉例：若目標為(1, 0)則烏龜要移動到以自己頭為X軸，往前(1, 0)，而非上一題的移動到 world frame (1, 0)。
+2. 題目大致同上，不過本題的指定位置改為 body frame, 舉例：若目標為(2, 2)則烏龜要移動到以自己頭為X軸，移動(2, 2)，而非上一題的移動到 world frame (2, 2)。
 - 須更改 code : turtle_Pcontrol_B.cpp
-
-![45678 drawio](https://user-images.githubusercontent.com/75787424/222947280-699fbbf7-8546-4021-87b9-91d884caf09b.png)
+- 
+![45678 drawio (1)](https://user-images.githubusercontent.com/75787424/222947992-1b2d332e-7fd2-4286-aeb0-0d02756e11ea.png)
 
 ``` bash=
 $ roslaunch practice2 turtle_single.launch
