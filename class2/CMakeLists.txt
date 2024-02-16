@@ -205,8 +205,8 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-add_executable(turtle_more src/turtle_more.cpp)
-target_link_libraries(turtle_more ${catkin_LIBRARIES})
+add_executable(turtle_more1 src/turtle_more1.cpp)
+target_link_libraries(turtle_more1 ${catkin_LIBRARIES})
 
 add_executable(turtle_keyboard src/turtle_keyboard.cpp)
 target_link_libraries(turtle_keyboard ${catkin_LIBRARIES})
