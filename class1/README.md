@@ -4,7 +4,7 @@
 ```
 $ mkdir -p catkin_ws/src
 $ cd ~/catkin_ws/src
-$ git clone https://github.com/2021-Robotics-Aerial-Robots/Practice.git
+$ git clone https://github.com/2023-Robotics-Aerial-Robots/Practice.git
 $ cd ..
 $ catkin_make
 $ source ~/.bashrc
