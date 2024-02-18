@@ -3,7 +3,7 @@
 #include "std_msgs/Int32.h"
 
 using namespace std;
-std_msgs::Int32 msg;
+
 
 
 int main(int argc, char **argv)
@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 
   while (ros::ok())
   {
-
+    std_msgs::Int32 msg;
     // Publish number data here
 
 
