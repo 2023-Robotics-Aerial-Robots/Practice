@@ -31,7 +31,7 @@ $ roslaunch practice1 turtle.launch
 ```
 - 將原本的烏龜刪掉，並且呼叫和組員數量相同的烏龜
 ```
-$ rosrun practice1 turtle_spawn
+$ rosrun practice1 turtle_more
 ```
 - 每位組員控制自己名字的烏龜，在一位同學的電腦上操控
 ```
