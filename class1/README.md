@@ -27,7 +27,7 @@ $ rosrun practice1 number_sum
 ### 2. Turtles spawn and control
 - 呼叫 turtle
 ```
-$ roslaunch practice1 turtlesim.launch
+$ roslaunch practice1 turtle.launch
 ```
 - 將原本的烏龜刪掉，並且呼叫和組員數量相同的烏龜
 ```
