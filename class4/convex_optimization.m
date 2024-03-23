@@ -45,13 +45,13 @@ for i=1:iter
     gradient2 = gradient_x2(x1_newton,x2_newton);
     
     t = BLS(x1_newton,x2_newton,t,gradient1,gradient2,fg);
-    x1_newton=x1_newton - t*(0.1*gradient_x1(x1_newton,x2_newton));
-    x2_newton=x2_newton - t*(gradient_x2(x1_newton,x2_newton));
+    x1_newton=
+    x2_newton=
     
     % Descent method
-    t_descent = 0.005;
-    x1_descent=x1_descent - t_descent*(gradient_x1(x1_descent,x2_descent));
-    x2_descent=x2_descent - t_descent*(gradient_x2(x1_descent,x2_descent));
+    t_descent = 
+    x1_descent=
+    x2_descent=
     
         
     % store value in array
