@@ -18,10 +18,11 @@ function [Aeq beq]= getAbeq(n_seg, n_order, waypoints, ts, start_cond, end_cond)
     beq_end = zeros(4, 1);
     % STEP 2.2: write expression of Aeq_end and beq_end
     T = ts(size(ts,1));% time of the last trajectory
-    Aeq_end(1:1:4, n_all_poly-n_order:1:n_all_poly) = [ T^7,     T^6,    T^5,    T^4,   T^3, T^2, T, 1;
-                                                      7*T^6,   6*T^5,  5*T^4,  4*T^3, 3*T^2, 2*T, 1, 0;
-                                                     42*T^5,  30*T^4, 20*T^3, 12*T^2,   6*T,   2, 0, 0;
-                                                    210*T^4, 120*T^3, 60*T^2,   24*T,     6,   0, 0, 0];
+    %#####################################################
+        % Implement your code here - Checkpoint 2
+        % Define the end point constraint, it should be a matrix of T
+    %#####################################################
+    %Aeq_end(1:1:4, n_all_poly-n_order:1:n_all_poly) = ...;
     beq_end = end_cond';% p,v,a,j
     
     %#####################################################
@@ -32,7 +33,11 @@ function [Aeq beq]= getAbeq(n_seg, n_order, waypoints, ts, start_cond, end_cond)
     for midwp_index = 1:n_seg-1
         index = 1 + 8 * (midwp_index - 1);
         T = ts(midwp_index);
-        Aeq_wp(midwp_index,index:index+7) = [T^7, T^6, T^5, T^4, T^3, T^2, T, 1];% the end of previous segment
+        %#####################################################
+         % Implement your code here - Checkpoint 2
+         % Define the middle waypoint constraint, it should be a matrix of T
+        %#####################################################
+        %Aeq_wp(midwp_index,index:index+7) = []; % the end of previous segment
         % Aeq_wp(midwp_index,index+8:index+8+7) = [0, 0, 0, 0, 0, 0, 0, 1];% the begin of next segment
     end
     beq_wp = waypoints(2:n_seg,1);
