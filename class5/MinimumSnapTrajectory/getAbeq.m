@@ -52,8 +52,8 @@ function [Aeq beq]= getAbeq(n_seg, n_order, waypoints, ts, start_cond, end_cond)
     for con_p_index = 1:n_seg-1
         index = 1 + 8 * (con_p_index - 1);
         T = ts(con_p_index);
-        Aeq_con_p(con_p_index,index:index+7) = [T^7, T^6, T^5, T^4, T^3, T^2, T, 1];% the end of previous segment
-        Aeq_con_p(con_p_index,index+8:index+8+7) = [0, 0, 0, 0, 0, 0, 0, -1];% the begin of next segment
+        Aeq_con_p(con_p_index,index:index+7) = [];% the end of previous segment
+        Aeq_con_p(con_p_index,index+8:index+8+7) = [];% the begin of next segment
     end
     % beq_con_p is a zero vector
     
@@ -65,8 +65,8 @@ function [Aeq beq]= getAbeq(n_seg, n_order, waypoints, ts, start_cond, end_cond)
     for con_v_index = 1:n_seg-1
         index = 1 + 8 * (con_v_index - 1);
         T = ts(con_v_index);
-        Aeq_con_v(con_v_index,index:index+7) = [7*T^6, 6*T^5, 5*T^4, 4*T^3, 3*T^2, 2*T, 1, 0];% the end of previous segment
-        Aeq_con_v(con_v_index,index+8:index+8+7) = [0, 0, 0, 0, 0, 0, -1, 0];% the begin of next segment
+        Aeq_con_v(con_v_index,index:index+7) = [];% the end of previous segment
+        Aeq_con_v(con_v_index,index+8:index+8+7) = [];% the begin of next segment
     end
     % beq_con_v is a zero vector
     
@@ -78,8 +78,8 @@ function [Aeq beq]= getAbeq(n_seg, n_order, waypoints, ts, start_cond, end_cond)
     for con_a_index = 1:n_seg-1
         index = 1 + 8 * (con_a_index - 1);
         T = ts(con_a_index);
-        Aeq_con_a(con_a_index,index:index+7) = [42*T^5, 30*T^4, 20*T^3, 12*T^2, 6*T, 2, 0, 0];% the end of previous segment
-        Aeq_con_a(con_a_index,index+8:index+8+7) = [0, 0, 0, 0, 0, -2, 0, 0];% the begin of next segment
+        Aeq_con_a(con_a_index,index:index+7) = [];% the end of previous segment
+        Aeq_con_a(con_a_index,index+8:index+8+7) = [];% the begin of next segment
     end
     % beq_con_a is a zero vector
     
@@ -91,8 +91,8 @@ function [Aeq beq]= getAbeq(n_seg, n_order, waypoints, ts, start_cond, end_cond)
     for con_j_index = 1:n_seg-1
         index = 1 + 8 * (con_j_index - 1);
         T = ts(con_j_index);
-        Aeq_con_j(con_j_index,index:index+7) = [210*T^4, 120*T^3, 60*T^2, 24*T, 6, 0, 0, 0];% the end of previous segment
-        Aeq_con_j(con_j_index,index+8:index+8+7) = [0, 0, 0, 0, -6, 0, 0, 0];% the begin of next segment
+        Aeq_con_j(con_j_index,index:index+7) = [];% the end of previous segment
+        Aeq_con_j(con_j_index,index+8:index+8+7) = [];% the begin of next segment
     end
     % beq_con_j is a zero vector
     
