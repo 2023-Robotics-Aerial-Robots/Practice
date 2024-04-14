@@ -16,6 +16,9 @@ classdef controller
            R = reshape(multirotor.R(:, iter-1), 3, 3);
            W = multirotor.W(:, iter-1);
            e3 = multirotor.e3;
+
+%%　Checkpoint 2
+% ---------- Force Controller ---------
            
            % control gains
            kx = diag([10.0*multirotor.m; 10.0*multirotor.m; 10.0*multirotor.m]);
@@ -31,29 +34,26 @@ classdef controller
            ad_ned = vec_enu_to_ned(ad_enu);
            
            % error
-           ex_ned = x_ned - xd_ned;
-           ev_ned = v_ned - vd_ned;
+           ex_ned = ;
+           ev_ned = ;
            
            % f
-           A = (-kx*ex_ned - kv*ev_ned + multirotor.m*ad_ned - multirotor.m*multirotor.g*e3);
-           b3 = R*e3;
-           f = -vec_dot(A, b3);
-           
-           % Rd
-           norm_A = norm(A);
-           b3d = -A/norm_A;
-           b2d = vec_cross(b3d, b1d);
-           norm_b2d = norm(b2d);
-           b2d = b2d/norm_b2d;
-           b1d_proj = vec_cross(b2d, b3d);
+           A = ;
+           b3 = ;
+           f = vec_dot(,);
+
+%% Chcekpoint 3 
+           % ---------Find Rd----------
+           % Given A and b1d, find Rd
            Rd = [b1d_proj b2d b3d];
 
+%% Chcekpoint 4
            % eR and eW
-           eR = 1/2*vee_map(Rd'*R - R'*Rd);
-           eW = W - R'*Rd*Wd;
+           eR = ;
+           eW = ;
 
            % M
-           M = -kR*eR - kW*eW + vec_cross(W, multirotor.J*W);
+           M = ;
 
            % f, M
            control(1) = f;
